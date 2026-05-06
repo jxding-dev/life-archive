@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap');
+
+/* ============================================
+   LIFE ARCHIVE — Modern Vintage Design System
+   ============================================ */
+
+:root {
+
+  /* ── Colors ── */
+  --color-bg:           #F2EDE4;
+  --color-surface:      #EBE4D8;
+  --color-surface-soft: #E3DBC9;
+  --color-text:         #2C2416;
+  --color-muted:        #7A6A55;
+  --color-subtle:       #A8947A;
+  --color-primary:      #5C4A32;
+  --color-primary-soft: rgba(92, 74, 50, 0.10);
+  --color-gold:         #B8945A;
+  --color-border:       #D4C9B5;
+  --color-border-soft:  #E0D8CC;
+  --color-danger:       #B85C5C;
+
+  /* ── Decorative ── */
+  --color-sepia-light:  #F7F2EB;
+  --color-sepia-dark:   #C9B99A;
+  --color-ink:          #1A1208;
+
+  /* ── Emotion Colors ── */
+  --emotion-happy:      #C4883A;
+  --emotion-anxiety:    #7B6A9E;
+  --emotion-anger:      #B85C5C;
+  --emotion-lethargy:   #8A8070;
+  --emotion-lonely:     #5A7A9A;
+  --emotion-hope:       #5A8A6A;
+  --emotion-regret:     #A87A4A;
+  --emotion-excited:    #A86A80;
+  --emotion-fear:       #4A6A7A;
+  --emotion-confused:   #7A7A7A;
+
+  /* ── Typography ── */
+  --font-serif: 'Noto Serif KR', 'Georgia', serif;
+  --font-mono:  'DM Mono', 'Courier New', monospace;
+
+  /* ── Font Sizes ── */
+  --text-xs:   11px;
+  --text-sm:   13px;
+  --text-base: 15px;
+  --text-md:   17px;
+  --text-lg:   21px;
+  --text-xl:   26px;
+  --text-2xl:  32px;
+  --text-3xl:  42px;
+
+  /* ── Spacing ── */
+  --space-xs:  6px;
+  --space-sm:  10px;
+  --space-md:  16px;
+  --space-lg:  24px;
+  --space-xl:  40px;
+  --space-2xl: 64px;
+
+  /* ── Border Radius ── */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-arch: 120px 120px 8px 8px; /* 아치형 */
+
+  /* ── Shadows ── */
+  --shadow-sm: 0 1px 4px rgba(44, 36, 22, 0.08);
+  --shadow-md: 0 4px 16px rgba(44, 36, 22, 0.12);
+  --shadow-lg: 0 8px 32px rgba(44, 36, 22, 0.16);
+
+  /* ── Transitions ── */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+  --transition-slow: 400ms ease;
+
+  /* ── Layout ── */
+  --sidebar-width:  220px;
+  --content-max:    920px;
+  --header-height:  56px;
+  --control-height: 42px;
+  --control-height-sm: 34px;
+  --control-height-lg: 48px;
+}
+
+[data-theme="dark"] {
+  --color-bg:           #16130F;
+  --color-surface:      #211C16;
+  --color-surface-soft: #2B241C;
+  --color-text:         #F1E7D8;
+  --color-muted:        #C0AE96;
+  --color-subtle:       #8F7F68;
+  --color-primary:      #D6BE92;
+  --color-primary-soft: rgba(214, 190, 146, 0.12);
+  --color-gold:         #CDA867;
+  --color-border:       #4A3D2F;
+  --color-border-soft:  #342C23;
+  --color-danger:       #D17A7A;
+
+  --color-sepia-light:  #1C1813;
+  --color-sepia-dark:   #6F5E47;
+  --color-ink:          #F7F2EB;
+
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.24);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.32);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.42);
+}
