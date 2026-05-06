@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Archive — 기록</title>
+  <script>
+    (() => {
+      try {
+        const settings = JSON.parse(localStorage.getItem('life_archive_settings') || '{}');
+        if (settings.theme === 'dark') document.documentElement.dataset.theme = 'dark';
+      } catch {}
+    })();
+  </script>
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/variables.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/write.css" />
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- 사이드바 -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-title">Life Archive</div>
+        <div class="sidebar-logo-sub">memory · regret</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-item" href="./index.html">홈</a>
+        <a class="nav-item" href="./archive.html">아카이브</a>
+        <a class="nav-item active" href="./write.html">기록</a>
+        <a class="nav-item" href="./timeline.html">타임라인</a>
+        <a class="nav-item" href="./export.html">백업</a>
+        <a class="nav-item" href="./settings.html">설정</a>
+      </nav>
+
+      <div class="sidebar-quote">
+        <p>기억은 사라지지 않는다,<br />다만 흩어질 뿐이다.</p>
+      </div>
+    </aside>
+
+    <nav class="mobile-nav" aria-label="모바일 네비게이션">
+      <div class="mobile-nav-inner">
+        <a class="mobile-nav-item" href="./index.html">홈</a>
+        <a class="mobile-nav-item" href="./archive.html">아카이브</a>
+        <a class="mobile-nav-item active" href="./write.html">기록</a>
+        <a class="mobile-nav-item" href="./timeline.html">타임라인</a>
+        <a class="mobile-nav-item" href="./export.html">백업</a>
+        <a class="mobile-nav-item" href="./settings.html">설정</a>
+      </div>
+    </nav>
+
+    <!-- 메인 -->
+    <main class="main-content">
+      <div class="container">
+
+        <header class="write-header">
+          <p class="label-text" id="write-mode-label">새 기억</p>
+          <h1 class="page-title" id="write-page-title">오늘의 한 조각</h1>
+          <p class="page-subtitle">짧아도 좋아요. 떠오른 그대로</p>
+        </header>
+
+        <form id="write-form" class="write-form" autocomplete="off" novalidate>
+
+          <!-- 날짜 -->
+          <div class="form-group">
+            <label class="input-label" for="w-date">날짜</label>
+            <input id="w-date" class="input" type="date" required />
+          </div>
+
+          <!-- 제목 -->
+          <div class="form-group">
+            <label class="input-label" for="w-title">제목</label>
+            <input
+              id="w-title"
+              class="input"
+              type="text"
+              maxlength="80"
+              placeholder="이 기억을 한 줄로 부른다면"
+            />
+          </div>
+
+          <!-- 이미지 -->
+          <div class="form-group">
+            <p class="input-label">사진 (선택)</p>
+            <div class="write-image">
+              <label class="write-image-drop" id="w-image-drop">
+                <input id="w-image-input" type="file" accept="image/*" hidden />
+                <span class="write-image-icon">＋</span>
+                <span class="write-image-text">이미지 추가</span>
+              </label>
+              <div class="write-image-preview" id="w-image-preview" hidden>
+                <img id="w-image-thumb" alt="첨부 이미지" />
+                <button type="button" class="btn-ghost write-image-remove" id="w-image-remove">제거</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 본문 -->
+          <div class="form-group">
+            <label class="input-label" for="w-text">기억 조각</label>
+            <textarea
+              id="w-text"
+              class="input textarea"
+              maxlength="2000"
+              placeholder="떠오른 장면을 짧게 적어보세요"
+              required
+            ></textarea>
+          </div>
+
+          <!-- 감정 -->
+          <div class="form-group">
+            <p class="input-label">감정</p>
+            <div class="write-emotion-list" id="w-emotion-list"></div>
+          </div>
+
+          <!-- 더 깊이 기록하기 토글 -->
+          <button type="button" class="btn btn-outline btn-sm write-toggle" id="w-toggle">
+            ＋ 더 깊이 기록하기
+          </button>
+
+          <section class="write-extra" id="w-extra" hidden>
+
+            <div class="divider-ornament"><span>· · ·</span></div>
+
+            <!-- 회고 질문 -->
+            <div class="form-group">
+              <p class="input-label">회고 질문</p>
+              <div class="regret-list" id="w-regret-list">
+                <label class="input-label" for="w-regret-1">왜 그런 선택을 했나요?</label>
+                <textarea
+                  id="w-regret-1"
+                  class="input textarea regret-textarea"
+                  data-question="왜 그런 선택을 했나요?"
+                  placeholder="비워두어도 괜찮습니다"
+                ></textarea>
+
+                <label class="input-label" for="w-regret-2">그때의 나에게 한마디 한다면?</label>
+                <textarea
+                  id="w-regret-2"
+                  class="input textarea regret-textarea"
+                  data-question="그때의 나에게 한마디 한다면?"
+                  placeholder="비워두어도 괜찮습니다"
+                ></textarea>
+              </div>
+            </div>
+
+            <!-- 장소 -->
+            <div class="form-group">
+              <label class="input-label" for="w-location">장소</label>
+              <input id="w-location" class="input" type="text" maxlength="60" placeholder="어디였나요?" />
+            </div>
+
+            <!-- 사람들 -->
+            <div class="form-group">
+              <label class="input-label" for="w-people">함께한 사람 (쉼표로 구분)</label>
+              <input id="w-people" class="input" type="text" maxlength="120" placeholder="혼자, 친구, 엄마…" />
+            </div>
+
+            <!-- 태그 -->
+            <div class="form-group">
+              <label class="input-label" for="w-tags">태그 (쉼표로 구분)</label>
+              <input id="w-tags" class="input" type="text" maxlength="120" placeholder="겨울, 새벽, 카페…" />
+            </div>
+
+            <!-- 음악 -->
+            <div class="form-group">
+              <label class="input-label" for="w-music-title">음악 제목</label>
+              <input id="w-music-title" class="input" type="text" maxlength="80" placeholder="아티스트 - 곡명" />
+            </div>
+
+            <div class="form-group">
+              <label class="input-label" for="w-music-url">음악 링크 (YouTube)</label>
+              <input id="w-music-url" class="input" type="url" maxlength="200" placeholder="https://youtube.com/…" />
+            </div>
+
+          </section>
+
+          <p id="w-error" class="lock-error" role="alert"></p>
+
+          <div class="write-actions">
+            <button type="button" class="btn btn-ghost" id="w-cancel">취소</button>
+            <button type="submit" class="btn btn-primary btn-lg">기록하기</button>
+          </div>
+
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="./js/utils.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/imageStorage.js"></script>
+  <script src="./js/imageCompress.js"></script>
+  <script src="./js/emotion.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/write.js"></script>
+</body>
+</html>

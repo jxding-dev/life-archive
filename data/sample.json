@@ -1,0 +1,130 @@
+[
+  {
+    "id": "mem_20181201_001",
+    "type": "regret",
+    "year": 2018,
+    "month": 12,
+    "day": 1,
+    "title": "새벽 편의점",
+    "text": "잠이 안 와서 새벽 두 시에 혼자 편의점을 갔다. 삼각김밥 하나 사들고 계산대 옆 의자에 앉아서 한참을 멍하니 있었다. 아무도 없는 편의점. 형광등 빛만 하얗게 쏟아지던 그 순간이 이상하게 자꾸 떠오른다.",
+    "regretQuestions": [
+      {
+        "question": "왜 그런 선택을 했나요?",
+        "answer": "도망치고 싶었다. 아무 생각도 하기 싫어서."
+      },
+      {
+        "question": "그때의 나에게 한마디 한다면?",
+        "answer": "그냥 괜찮다고. 새벽에 혼자여도 괜찮다고."
+      }
+    ],
+    "emotion": ["외로움", "무기력"],
+    "music": {
+      "title": "IU - 밤편지",
+      "youtubeUrl": "https://www.youtube.com/watch?v=BzYnNdJhZQw"
+    },
+    "location": "집 앞 편의점",
+    "people": ["혼자"],
+    "tags": ["겨울", "새벽", "2018"],
+    "hasImage": false,
+    "imageId": null,
+    "createdAt": "2024-01-15T22:30:00.000Z",
+    "updatedAt": "2024-01-15T22:30:00.000Z"
+  },
+  {
+    "id": "mem_20150315_001",
+    "type": "memory",
+    "year": 2015,
+    "month": 3,
+    "day": 15,
+    "title": "벚꽃 아래서 읽던 책",
+    "text": "대학교 입학 첫 학기. 캠퍼스 벚꽃길 벤치에 앉아서 혼자 책을 읽었다. 바람이 불면 꽃잎이 책 위로 떨어졌다. 아무것도 아닌 순간인데, 지금 생각하면 그때가 제일 가벼웠다.",
+    "regretQuestions": [],
+    "emotion": ["희망", "설렘"],
+    "music": {
+      "title": "Yiruma - River Flows in You",
+      "youtubeUrl": "https://www.youtube.com/watch?v=7maJOI3QMu0"
+    },
+    "location": "대학교 캠퍼스",
+    "people": ["혼자"],
+    "tags": ["봄", "벚꽃", "대학교", "2015"],
+    "hasImage": false,
+    "imageId": null,
+    "createdAt": "2024-01-16T10:00:00.000Z",
+    "updatedAt": "2024-01-16T10:00:00.000Z"
+  },
+  {
+    "id": "mem_20210807_001",
+    "type": "regret",
+    "year": 2021,
+    "month": 8,
+    "day": 7,
+    "title": "말하지 못한 것들",
+    "text": "오래된 친구를 3년 만에 만났다. 밥을 먹으면서 내내 웃고 떠들었는데, 집에 오는 길에 울고 싶었다. 하고 싶었던 말이 많았는데 하나도 못 했다. 보고 싶다는 말도, 미안하다는 말도.",
+    "regretQuestions": [
+      {
+        "question": "왜 그런 선택을 했나요?",
+        "answer": "괜히 분위기 무거워질까 봐. 나만 그런 것 같아서."
+      },
+      {
+        "question": "지금 다시 돌아간다면?",
+        "answer": "그냥 말할 것 같다. 어색해도."
+      }
+    ],
+    "emotion": ["후회", "외로움"],
+    "music": {
+      "title": "적재 - 별 보러 가자",
+      "youtubeUrl": "https://www.youtube.com/watch?v=4Ob_x52ixq8"
+    },
+    "location": "강남 어느 식당",
+    "people": ["오래된 친구"],
+    "tags": ["여름", "우정", "후회", "2021"],
+    "hasImage": false,
+    "imageId": null,
+    "createdAt": "2024-01-17T18:45:00.000Z",
+    "updatedAt": "2024-01-17T18:45:00.000Z"
+  },
+  {
+    "id": "mem_20230101_001",
+    "type": "memory",
+    "year": 2023,
+    "month": 1,
+    "day": 1,
+    "title": "새해 첫 날 아침",
+    "text": "알람도 없이 아침 일찍 눈이 떠졌다. 커튼 사이로 빛이 들어오고 있었다. 작년에 있었던 일들이 천천히 머릿속을 지나갔다. 나쁜 것도, 좋은 것도. 그냥 있었다는 것만으로도 충분한 것들.",
+    "regretQuestions": [],
+    "emotion": ["희망", "혼란"],
+    "music": {
+      "title": "Nils Frahm - Says",
+      "youtubeUrl": "https://www.youtube.com/watch?v=dT1oQS0hEE8"
+    },
+    "location": "집",
+    "people": ["혼자"],
+    "tags": ["새해", "겨울", "아침", "2023"],
+    "hasImage": false,
+    "imageId": null,
+    "createdAt": "2024-01-18T09:00:00.000Z",
+    "updatedAt": "2024-01-18T09:00:00.000Z"
+  },
+  {
+    "id": "mem_20170605_001",
+    "type": "memory",
+    "year": 2017,
+    "month": 6,
+    "day": 5,
+    "title": "처음 혼자 여행",
+    "text": "처음으로 혼자 기차를 타고 경주에 갔다. 아는 사람 하나 없고, 계획도 없었다. 불국사 앞에서 한 시간 동안 그냥 앉아 있었다. 그때 처음으로 혼자여도 괜찮다는 걸 알았다.",
+    "regretQuestions": [],
+    "emotion": ["행복", "설렘", "두려움"],
+    "music": {
+      "title": "김광석 - 서른 즈음에",
+      "youtubeUrl": "https://www.youtube.com/watch?v=7-PbOwfxGgI"
+    },
+    "location": "경주 불국사",
+    "people": ["혼자"],
+    "tags": ["여름", "여행", "경주", "2017"],
+    "hasImage": false,
+    "imageId": null,
+    "createdAt": "2024-01-19T14:20:00.000Z",
+    "updatedAt": "2024-01-19T14:20:00.000Z"
+  }
+]

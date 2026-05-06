@@ -1,0 +1,149 @@
+/* ============================================
+   LIFE ARCHIVE — Home Page
+   허브 / 오늘의 기억 / 감정 흐름
+   ============================================ */
+
+.home-header {
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.home-header .label-text {
+  margin-bottom: var(--space-xs);
+}
+
+.home-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.home-summary-item {
+  background: var(--color-sepia-light);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.home-summary-value {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-lg);
+  color: var(--color-primary);
+  line-height: 1.2;
+}
+
+.home-summary-label {
+  display: block;
+  margin-top: var(--space-xs);
+  font-family: var(--font-serif);
+  font-size: var(--text-xs);
+  color: var(--color-subtle);
+}
+
+.home-section {
+  margin-bottom: var(--space-lg);
+}
+
+#on-this-day-section {
+  background: var(--color-sepia-light);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.home-section-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-bottom: var(--space-sm);
+  padding-bottom: var(--space-xs);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.home-section-header .section-title {
+  margin-bottom: 0;
+}
+
+.home-memory-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.home-memory-note {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-subtle);
+  margin-bottom: var(--space-xs);
+  letter-spacing: 0.04em;
+}
+
+.home-emotion-chart {
+  background: var(--color-sepia-light);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.home-cta {
+  background: var(--color-sepia-light);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.home-cta-title {
+  margin-bottom: var(--space-sm);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+.home-cta .btn-primary {
+  min-height: var(--control-height);
+  border: 1px solid var(--color-primary);
+  background: transparent;
+  color: var(--color-primary);
+}
+
+.home-cta .btn-primary:hover {
+  background: var(--color-primary-soft);
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .home-header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .home-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--space-sm);
+  }
+
+  .home-summary-item:first-child {
+    grid-column: span 2;
+  }
+
+  .home-section-header {
+    align-items: center;
+    flex-direction: row;
+    gap: var(--space-sm);
+  }
+
+  .home-cta {
+    padding: var(--space-sm);
+  }
+
+  .home-cta .btn {
+    width: 100%;
+  }
+}

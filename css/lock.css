@@ -1,0 +1,218 @@
+/* ============================================
+   LIFE ARCHIVE — Lock Page
+   PIN 잠금 화면 전용 스타일
+   ============================================ */
+
+
+/* ── Page Layout ─────────────────────────────── */
+
+.lock-body {
+  background:
+    radial-gradient(circle at 50% 0%, var(--color-sepia-light), var(--color-bg) 70%);
+  min-height: 100vh;
+}
+
+.lock-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+}
+
+
+/* ── Lock Card ───────────────────────────────── */
+
+.lock-card {
+  width: 100%;
+  max-width: 360px;
+  padding: var(--space-2xl) var(--space-xl);
+  background: var(--color-sepia-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+
+/* ── Header ──────────────────────────────────── */
+
+.lock-header {
+  margin-bottom: var(--space-xl);
+}
+
+.lock-eyebrow {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: var(--space-sm);
+}
+
+.lock-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-xs);
+}
+
+.lock-sub {
+  font-family: var(--font-serif);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  font-weight: 300;
+  font-style: italic;
+}
+
+
+/* ── PIN Form ────────────────────────────────── */
+
+.lock-form {
+  position: relative;
+}
+
+/* 실제 입력은 보이지 않게, 점 인디케이터로 표현 */
+.lock-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.lock-input:focus { outline: none; }
+
+
+/* ── PIN Dots ────────────────────────────────── */
+
+.lock-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-md) 0;
+}
+
+.lock-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid var(--color-border);
+  transition:
+    background var(--transition-fast),
+    border-color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.lock-dot.filled {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  transform: scale(1.1);
+}
+
+/* 입력창에 포커스가 있을 때 다음 입력 위치 강조 */
+.lock-form:focus-within .lock-dot:not(.filled):first-of-type,
+.lock-form:focus-within .lock-dot.filled + .lock-dot:not(.filled) {
+  border-color: var(--color-sepia-dark);
+}
+
+
+/* ── Error 메시지 ────────────────────────────── */
+
+.lock-error {
+  min-height: 1.4em;
+  margin-top: var(--space-md);
+  font-family: var(--font-serif);
+  font-size: var(--text-sm);
+  color: var(--color-danger);
+  font-weight: 300;
+  font-style: italic;
+}
+
+
+/* ── 흔들림 애니메이션 ──────────────────────── */
+
+@keyframes lock-shake {
+  0%, 100% { transform: translateX(0); }
+  20%      { transform: translateX(-8px); }
+  40%      { transform: translateX(8px); }
+  60%      { transform: translateX(-6px); }
+  80%      { transform: translateX(4px); }
+}
+
+.lock-card.shake {
+  animation: lock-shake 380ms ease;
+}
+
+.lock-dot.error {
+  background: var(--color-danger);
+  border-color: var(--color-danger);
+}
+
+
+/* ── Hint ────────────────────────────────────── */
+
+.lock-hint {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-subtle);
+  letter-spacing: 0.06em;
+}
+
+
+/* ── Setup 변형 (lock 카드 재사용) ───────────── */
+
+.lock-card-wide {
+  max-width: 420px;
+  text-align: left;
+}
+
+.lock-card-wide .lock-header {
+  text-align: center;
+}
+
+.setup-form .form-group:last-of-type {
+  margin-bottom: var(--space-md);
+}
+
+.setup-check {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0 var(--space-md);
+  font-family: var(--font-serif);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  cursor: pointer;
+}
+
+.setup-check input[type="checkbox"] {
+  accent-color: var(--color-primary);
+  width: 16px;
+  height: 16px;
+}
+
+
+/* ── Responsive ──────────────────────────────── */
+
+@media (max-width: 480px) {
+  .lock-card {
+    padding: var(--space-xl) var(--space-lg);
+    max-width: 100%;
+  }
+
+  .lock-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .lock-dots {
+    gap: var(--space-sm);
+  }
+}

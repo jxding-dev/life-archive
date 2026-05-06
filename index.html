@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Archive — 홈</title>
+  <script>
+    (() => {
+      try {
+        const settings = JSON.parse(localStorage.getItem('life_archive_settings') || '{}');
+        if (settings.theme === 'dark') document.documentElement.dataset.theme = 'dark';
+      } catch {}
+    })();
+  </script>
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/variables.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+<body>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-title">Life Archive</div>
+        <div class="sidebar-logo-sub">memory · regret</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-item active" href="./index.html">홈</a>
+        <a class="nav-item" href="./archive.html">아카이브</a>
+        <a class="nav-item" href="./write.html">기록</a>
+        <a class="nav-item" href="./timeline.html">타임라인</a>
+        <a class="nav-item" href="./export.html">백업</a>
+        <a class="nav-item" href="./settings.html">설정</a>
+      </nav>
+
+      <div class="sidebar-quote">
+        <p>기억은 사라지지 않는다,<br />다만 흩어질 뿐이다.</p>
+      </div>
+    </aside>
+
+    <nav class="mobile-nav" aria-label="모바일 네비게이션">
+      <div class="mobile-nav-inner">
+        <a class="mobile-nav-item active" href="./index.html">홈</a>
+        <a class="mobile-nav-item" href="./archive.html">아카이브</a>
+        <a class="mobile-nav-item" href="./write.html">기록</a>
+        <a class="mobile-nav-item" href="./timeline.html">타임라인</a>
+        <a class="mobile-nav-item" href="./export.html">백업</a>
+        <a class="mobile-nav-item" href="./settings.html">설정</a>
+      </div>
+    </nav>
+
+    <main class="main-content">
+      <div class="container">
+
+        <header class="home-header">
+          <p class="label-text" id="home-label">Life Archive</p>
+          <h1 class="page-title" id="home-title">오늘의 기억</h1>
+          <p class="page-subtitle">흩어진 조각을 천천히 다시 엮어요</p>
+        </header>
+
+        <section class="home-summary" id="home-summary" hidden>
+          <div class="home-summary-item">
+            <span class="home-summary-value" id="home-total">0</span>
+            <span class="home-summary-label">기억</span>
+          </div>
+          <div class="home-summary-item">
+            <span class="home-summary-value" id="home-years">0</span>
+            <span class="home-summary-label">연도</span>
+          </div>
+          <div class="home-summary-item">
+            <span class="home-summary-value" id="home-top-emotion">—</span>
+            <span class="home-summary-label">주요 감정</span>
+          </div>
+        </section>
+
+        <section class="home-section" id="on-this-day-section" hidden>
+          <div class="home-section-header">
+            <div>
+              <p class="label-text">On This Day</p>
+              <h2 class="section-title">몇 년 전 오늘</h2>
+            </div>
+            <a class="memory-card-link" href="./archive.html">전체 보기 →</a>
+          </div>
+          <div class="home-memory-list" id="on-this-day-list"></div>
+        </section>
+
+        <section class="home-section" id="emotion-section" hidden>
+          <div class="home-section-header">
+            <div>
+              <p class="label-text">Mood Flow</p>
+              <h2 class="section-title">최근 감정 흐름</h2>
+            </div>
+          </div>
+          <div class="home-emotion-chart" id="home-emotion-chart"></div>
+        </section>
+
+        <section class="home-cta decor-border">
+          <p class="home-cta-title">오늘 남기고 싶은 장면이 있나요?</p>
+          <a class="btn btn-primary btn-lg" href="./write.html">＋ 지금 기억 남기기</a>
+        </section>
+
+        <section id="home-empty" class="empty-state" hidden>
+          <div class="empty-state-icon">◌</div>
+          <p class="empty-state-title">아직 기록된 기억이 없습니다</p>
+          <p class="empty-state-desc">첫 기억을 남기면 이곳에 흐름이 생겨요</p>
+          <a class="btn btn-outline" href="./write.html">기록 시작하기</a>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="./js/utils.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/emotion.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/index.js"></script>
+</body>
+</html>

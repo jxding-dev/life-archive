@@ -1,0 +1,19 @@
+.env
+.env.*
+node_modules/
+dist/
+build/
+.cache/
+*.log
+*.tmp
+.DS_Store
+Thumbs.db
+
+# Local handoff / preview notes
+AGENTS.md
+CLAUDE.md
+life-archive-cowork-v*.md
+design-preview.html
+docs/api.md
+docs/db-structure.md
+docs/ui-rules.md

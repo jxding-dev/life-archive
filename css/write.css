@@ -1,0 +1,183 @@
+/* ============================================
+   LIFE ARCHIVE — Write Page
+   기억 작성 / 수정 화면
+   ============================================ */
+
+
+/* ── Header ──────────────────────────────────── */
+
+.write-header {
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.write-header .label-text {
+  margin-bottom: var(--space-xs);
+}
+
+
+/* ── Form ────────────────────────────────────── */
+
+.write-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.write-form .form-group {
+  margin-bottom: 0;
+}
+
+
+/* ── 이미지 업로드 ──────────────────────────── */
+
+.write-image {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.write-image-drop {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  height: 86px;
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-subtle);
+  font-family: var(--font-serif);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.write-image-drop:hover {
+  border-color: var(--color-sepia-dark);
+  color: var(--color-muted);
+  background: var(--color-sepia-light);
+}
+
+.write-image-icon {
+  font-size: var(--text-lg);
+  font-family: var(--font-mono);
+  line-height: 1;
+}
+
+.write-image-text {
+  font-style: italic;
+}
+
+
+/* 미리보기 (아치형 — 시안 핵심 비주얼) */
+.write-image-preview {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+}
+
+.write-image-preview img {
+  width: 72px;
+  height: 88px;
+  object-fit: cover;
+  border-radius: var(--radius-arch);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-soft);
+}
+
+.write-image-remove {
+  font-size: var(--text-xs);
+}
+
+
+/* ── 감정 태그 리스트 ───────────────────────── */
+
+.write-emotion-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  padding: var(--space-sm) 0;
+}
+
+
+/* ── 더 깊이 기록하기 토글 ──────────────────── */
+
+.write-toggle {
+  align-self: flex-start;
+  margin-top: 0;
+}
+
+.write-extra {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  margin-top: 0;
+}
+
+
+/* ── 회고 질문 ──────────────────────────────── */
+
+.regret-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.regret-textarea {
+  min-height: 72px;
+}
+
+
+/* ── 액션 버튼 영역 ─────────────────────────── */
+
+.write-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-soft);
+}
+
+
+/* ── Responsive ──────────────────────────────── */
+
+@media (max-width: 768px) {
+  .write-header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .write-form,
+  .write-extra {
+    gap: var(--space-md);
+  }
+
+  .write-image {
+    flex-direction: column;
+  }
+
+  .write-image-drop {
+    width: 100%;
+    height: 90px;
+  }
+
+  .write-image-preview img {
+    width: 70px;
+    height: 88px;
+  }
+
+  .write-actions {
+    flex-direction: column-reverse;
+  }
+
+  .write-actions .btn {
+    width: 100%;
+  }
+}

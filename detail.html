@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Life Archive — 기억 상세</title>
+  <script>
+    (() => {
+      try {
+        const settings = JSON.parse(localStorage.getItem('life_archive_settings') || '{}');
+        if (settings.theme === 'dark') document.documentElement.dataset.theme = 'dark';
+      } catch {}
+    })();
+  </script>
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/variables.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./css/detail.css" />
+</head>
+<body>
+
+  <div class="app-layout">
+
+    <!-- 사이드바 -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <div class="sidebar-logo-title">Life Archive</div>
+        <div class="sidebar-logo-sub">memory · regret</div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-item" href="./index.html">홈</a>
+        <a class="nav-item" href="./archive.html">아카이브</a>
+        <a class="nav-item" href="./write.html">기록</a>
+        <a class="nav-item" href="./timeline.html">타임라인</a>
+        <a class="nav-item" href="./export.html">백업</a>
+        <a class="nav-item" href="./settings.html">설정</a>
+      </nav>
+
+      <div class="sidebar-quote">
+        <p>기억은 사라지지 않는다,<br />다만 흩어질 뿐이다.</p>
+      </div>
+    </aside>
+
+    <nav class="mobile-nav" aria-label="모바일 네비게이션">
+      <div class="mobile-nav-inner">
+        <a class="mobile-nav-item" href="./index.html">홈</a>
+        <a class="mobile-nav-item active" href="./archive.html">아카이브</a>
+        <a class="mobile-nav-item" href="./write.html">기록</a>
+        <a class="mobile-nav-item" href="./timeline.html">타임라인</a>
+        <a class="mobile-nav-item" href="./export.html">백업</a>
+        <a class="mobile-nav-item" href="./settings.html">설정</a>
+      </div>
+    </nav>
+
+    <!-- 메인 -->
+    <main class="main-content">
+      <div class="container" id="detail-container">
+
+        <a class="detail-back" href="./archive.html">← 아카이브로</a>
+
+        <!-- 본문은 detail.js가 채움 -->
+        <article id="detail-article" class="detail-article" hidden></article>
+
+        <!-- 데이터 없을 때 -->
+        <section id="detail-empty" class="empty-state" hidden>
+          <div class="empty-state-icon">◌</div>
+          <p class="empty-state-title">기억을 찾을 수 없습니다</p>
+          <p class="empty-state-desc">삭제되었거나 잘못된 주소일 수 있어요</p>
+          <a class="btn btn-outline" href="./archive.html">아카이브로 돌아가기</a>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="./js/utils.js"></script>
+  <script src="./js/storage.js"></script>
+  <script src="./js/imageStorage.js"></script>
+  <script src="./js/emotion.js"></script>
+  <script src="./js/app.js"></script>
+  <script src="./js/detail.js"></script>
+</body>
+</html>

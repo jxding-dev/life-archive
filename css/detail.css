@@ -1,0 +1,234 @@
+/* ============================================
+   LIFE ARCHIVE — Detail Page
+   기억 상세 보기
+   ============================================ */
+
+
+/* ── 뒤로 가기 ──────────────────────────────── */
+
+.detail-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-subtle);
+  letter-spacing: 0.06em;
+  margin-bottom: var(--space-lg);
+  transition: color var(--transition-fast);
+}
+
+.detail-back:hover {
+  color: var(--color-primary);
+}
+
+
+/* ── Article ────────────────────────────────── */
+
+.detail-article {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+
+/* ── Header (날짜 + 타입) ────────────────────── */
+
+.detail-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+
+/* ── Hero Image (아치형) ─────────────────────── */
+
+.detail-image {
+  align-self: flex-start;
+  width: 180px;
+  height: 230px;
+  border-radius: var(--radius-arch);
+  object-fit: cover;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-soft);
+  box-shadow: var(--shadow-sm);
+}
+
+
+/* ── Title ──────────────────────────────────── */
+
+.detail-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+
+
+/* ── Text 본문 ──────────────────────────────── */
+
+.detail-text {
+  font-family: var(--font-serif);
+  font-size: var(--text-md);
+  color: var(--color-text);
+  line-height: 1.75;
+  font-weight: 300;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+
+/* ── 감정 영역 ──────────────────────────────── */
+
+.detail-emotions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+
+/* ── 정보 섹션 (장소·사람·태그·음악·회고) ──── */
+
+.detail-section {
+  background: var(--color-sepia-light);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.detail-section-title {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-subtle);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-sm);
+}
+
+.detail-section-body {
+  font-family: var(--font-serif);
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+
+/* ── 회고 Q&A ──────────────────────────────── */
+
+.detail-regret-item {
+  margin-bottom: var(--space-md);
+}
+
+.detail-regret-item:last-child {
+  margin-bottom: 0;
+}
+
+.detail-regret-q {
+  font-family: var(--font-serif);
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  font-weight: 500;
+  margin-bottom: var(--space-xs);
+}
+
+.detail-regret-a {
+  font-family: var(--font-serif);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  line-height: 1.8;
+  font-weight: 300;
+  font-style: italic;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+
+/* ── 음악 ───────────────────────────────────── */
+
+.detail-music-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.detail-music-link:hover {
+  color: var(--color-primary);
+}
+
+
+/* ── 태그 / 사람 (인라인 칩) ────────────────── */
+
+.detail-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.detail-chip {
+  display: inline-flex;
+  padding: 3px var(--space-sm);
+  border-radius: 100px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  color: var(--color-muted);
+  font-family: var(--font-serif);
+  font-size: var(--text-xs);
+}
+
+
+/* ── Footer (날짜 / createdAt) ───────────────── */
+
+.detail-footer {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-subtle);
+  letter-spacing: 0.04em;
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-soft);
+}
+
+
+/* ── 액션 ───────────────────────────────────── */
+
+.detail-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-sm);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border-soft);
+}
+
+
+/* ── Responsive ──────────────────────────────── */
+
+@media (max-width: 768px) {
+  .detail-image {
+    width: 100%;
+    max-width: 280px;
+    height: 320px;
+    align-self: center;
+  }
+
+  .detail-title {
+    font-size: var(--text-xl);
+  }
+
+  .detail-text {
+    font-size: var(--text-base);
+  }
+
+  .detail-actions {
+    flex-direction: column-reverse;
+  }
+
+  .detail-actions .btn {
+    width: 100%;
+  }
+}

@@ -1,0 +1,71 @@
+/* ============================================
+   LIFE ARCHIVE — Export Page
+   백업 / 복원
+   ============================================ */
+
+.export-header {
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid var(--color-border-soft);
+}
+
+.export-header .label-text {
+  margin-bottom: var(--space-xs);
+}
+
+.export-section {
+  background: var(--color-sepia-light);
+  border: 1px solid var(--color-border-soft);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  margin-bottom: var(--space-lg);
+}
+
+.export-section .section-title {
+  margin-bottom: var(--space-sm);
+}
+
+.export-section .body-text {
+  margin-bottom: var(--space-md);
+}
+
+.export-file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.export-file-button {
+  cursor: pointer;
+}
+
+.export-message {
+  min-height: 1.4em;
+  margin-top: var(--space-sm);
+  font-family: var(--font-serif);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+.export-message.is-error {
+  color: var(--color-danger);
+}
+
+@media (max-width: 768px) {
+  .export-header {
+    margin-bottom: var(--space-lg);
+  }
+
+  .export-section {
+    padding: var(--space-md);
+    margin-bottom: var(--space-lg);
+  }
+
+  .export-section .btn,
+  .export-file-button {
+    width: 100%;
+  }
+}
