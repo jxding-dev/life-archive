@@ -12,7 +12,7 @@ HTML, CSS, Vanilla JavaScript만 사용하는 정적 웹앱이며, 기록 데이
 - "몇 년 전 오늘" 기억 표시
 - 타임라인 보기
 - 이미지 첨부 및 압축 저장
-- JSON 백업/복원, 텍스트 내보내기
+- 설정 화면의 JSON 백업/복원, 텍스트 내보내기
 - PIN 잠금 및 초기 설정 화면
 - 세피아/다크모드 테마
 - 전체 기록 초기화, 앱 전체 초기화
@@ -45,8 +45,7 @@ index.html
 - `archive.html`: 전체 기억 아카이브, 검색/연도/감정 필터
 - `detail.html`: 기억 상세 보기
 - `timeline.html`: 시간순 기억 흐름
-- `export.html`: 백업/복원
-- `settings.html`: PIN, 테마, 초기화 설정
+- `settings.html`: PIN, 테마, 백업/복원, 초기화 설정
 - `setup.html`: 초기 PIN 설정
 - `lock.html`: 잠금 해제
 
@@ -59,7 +58,7 @@ life-archive/
 ├─ archive.html
 ├─ detail.html
 ├─ timeline.html
-├─ export.html
+├─ export.html        # settings.html로 이동하는 이전 백업 경로
 ├─ settings.html
 ├─ setup.html
 ├─ lock.html

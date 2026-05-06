@@ -57,6 +57,35 @@
   margin-bottom: var(--space-md);
 }
 
+.settings-section .body-text {
+  margin-bottom: var(--space-md);
+}
+
+.export-file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+.export-file-button {
+  cursor: pointer;
+}
+
+.export-message {
+  min-height: 1.4em;
+  margin-top: var(--space-sm);
+  font-family: var(--font-serif);
+  font-size: var(--text-sm);
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+.export-message.is-error {
+  color: var(--color-danger);
+}
+
 @media (max-width: 768px) {
   .settings-header {
     margin-bottom: var(--space-lg);
@@ -68,7 +97,8 @@
   }
 
   .settings-form .btn,
-  .settings-danger .btn {
+  .settings-danger .btn,
+  .export-file-button {
     width: 100%;
   }
 }

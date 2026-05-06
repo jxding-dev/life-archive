@@ -15,6 +15,8 @@
   const $importJson = document.getElementById('import-json');
   const $message    = document.getElementById('import-message');
 
+  if (!$exportJson || !$exportTxt || !$importJson || !$message) return;
+
   function setMessage(msg, isError = false) {
     $message.textContent = msg || '';
     $message.classList.toggle('is-error', isError);
