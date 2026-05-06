@@ -83,3 +83,4 @@ life-archive/
 - 페이지별 동작은 각 페이지 전용 JS 파일에서 관리합니다.
 - 불필요한 라이브러리를 추가하지 않습니다.
 - 로컬 인수인계 문서와 내부 문서는 `.gitignore`로 제외합니다.
+https://life-archive.onrender.com
